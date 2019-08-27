@@ -12,4 +12,4 @@ if [ ! -d "$MYSQL_PATH" ]; then
     mkdir $MYSQL_PATH
 fi
 
-sudo docker-compose -f $DIR/mysql-compose.yml up
+docker-compose -f $DIR/mysql-compose.yml up

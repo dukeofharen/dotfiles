@@ -12,4 +12,4 @@ if [ ! -d "$MSSQL_PATH" ]; then
     mkdir $MSSQL_PATH
 fi
 
-sudo docker-compose -f $DIR/mssql-compose.yml up
+docker-compose -f $DIR/mssql-compose.yml up
