@@ -16,7 +16,7 @@ do
     echo "Creating file $NEW_SCRIPT_PATH"
     NL=$'\n'
     SCRIPT="#!/bin/bash
-bash $FILE_PATH"
+sudo bash $FILE_PATH"
     # echo "$SCRIPT"
     echo "$SCRIPT" > $NEW_SCRIPT_PATH
     chmod +x $NEW_SCRIPT_PATH
