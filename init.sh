@@ -26,5 +26,5 @@ done
 BASHRC_PATH="$HOME/.bashrc"
 if ! grep -q '$HOME/.bashrc' "$BASHRC_PATH"; then
   echo "Adding path $USER_BIN_PATH to .bashrc file"
-  echo 'export PATH="$PATH:$HOME/.bashrc"' >> $BASHRC_PATH
+  echo 'export PATH="$PATH:$HOME/bin"' >> $BASHRC_PATH
 fi
