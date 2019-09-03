@@ -14,17 +14,25 @@ do
     NEW_FILE_NAME=${FILE_NAME//.sh/}
     NEW_SCRIPT_PATH="$USER_BIN_PATH/$NEW_FILE_NAME"
     echo "Creating file $NEW_SCRIPT_PATH"
-    NL=$'\n'
     SCRIPT="#!/bin/bash
 sudo bash $FILE_PATH"
-    # echo "$SCRIPT"
     echo "$SCRIPT" > $NEW_SCRIPT_PATH
     chmod +x $NEW_SCRIPT_PATH
-
 done
 
 BASHRC_PATH="$HOME/.bashrc"
-if ! grep -q '$HOME/.bashrc' "$BASHRC_PATH"; then
+if ! grep -q '$HOME/bin' $BASHRC_PATH; then
   echo "Adding path $USER_BIN_PATH to .bashrc file"
-  echo 'export PATH="$PATH:$HOME/bin"' >> $BASHRC_PATH
+  printf '\nexport PATH="$PATH:$HOME/bin"' >> $BASHRC_PATH
+fi
+
+ENV_PATH="$HOME/.env"
+if [ ! -f "$ENV_PATH" ]; then
+    echo "Creating file $ENV_PATH"
+    touch $ENV_PATH
+fi
+
+if ! grep -q '$HOME/.env' $BASHRC_PATH; then
+  echo "Adding $HOME/.env to .bashrc file"
+  printf '\nsource "$HOME/.env"' >> $BASHRC_PATH
 fi
