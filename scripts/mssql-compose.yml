@@ -1,6 +1,6 @@
 version: '3.1'
 services:
-  db:
+  mssql:
     image: mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
     environment:
       ACCEPT_EULA: Y
