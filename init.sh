@@ -32,7 +32,7 @@ if [ ! -f "$ENV_PATH" ]; then
     touch $ENV_PATH
 fi
 
-if ! grep -q '$HOME/.env' $BASHRC_PATH; then
-  echo "Adding $HOME/.env to .bashrc file"
-  printf '\nsource "$HOME/.env"' >> $BASHRC_PATH
+if ! grep -q '$HOME/.environment' $BASHRC_PATH; then
+  echo "Adding $HOME/.environment to .bashrc file"
+  printf '\nsource "$HOME/.environment"' >> $BASHRC_PATH
 fi
