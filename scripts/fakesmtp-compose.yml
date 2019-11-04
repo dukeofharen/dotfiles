@@ -6,3 +6,9 @@ services:
       - "2525:25"
     volumes:
       - $HOME/.docker-stuff/fakesmtp:/var/mail
+    networks:
+      - ducode_default
+
+networks:
+  ducode_default:
+    external: true
