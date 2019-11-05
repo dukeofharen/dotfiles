@@ -26,7 +26,7 @@ if ! grep -q '$HOME/bin' $BASHRC_PATH; then
   printf '\nexport PATH="$PATH:$HOME/bin"' >> $BASHRC_PATH
 fi
 
-ENV_PATH="$HOME/.env"
+ENV_PATH="$HOME/.environment"
 if [ ! -f "$ENV_PATH" ]; then
     echo "Creating file $ENV_PATH"
     touch $ENV_PATH
