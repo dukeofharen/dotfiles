@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  gotenberg:
+    image: thecodingmachine/gotenberg:6.0.4
+    ports:
+      - "3000:3000"
+    networks:
+      - ducode_default
+
+networks:
+  ducode_default:
+    external: true
